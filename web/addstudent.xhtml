@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>Add Student </title>
+    </h:head>
+    <h:body>
+        <center>
+            <h:form id="form">
+                <p:messages id="msg" closable="true" showDetail="true"></p:messages>
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        <h:outputText value="Student Information Form"/>
+                    </f:facet>
+                    <h:outputLabel value="Roll No. "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.rollno}"></p:inputText>
+                    <h:outputLabel value="Student Name "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.name}"></p:inputText>
+                    <h:outputLabel value="Email "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.email}"></p:inputText>
+                    <h:outputLabel value="Password "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.password}"></p:inputText>
+                    <p:outputLabel value="Sex"></p:outputLabel>
+                    <h:selectOneRadio value="#{studentMB.st.sex}">
+                        <f:selectItem itemValue="Male" itemLabel="Male" />
+                        <f:selectItem itemValue="Female" itemLabel="Female" />
+                        <f:selectItem itemValue="Others" itemLabel="Others" />
+                    </h:selectOneRadio>
+                    <h:outputLabel value="Course "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.course}"></p:inputText>
+                    <h:outputLabel value="Fee "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.fee}"></p:inputText>
+                    <h:outputLabel value="Paid "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.paid}"></p:inputText>
+                    <h:outputLabel value="Due "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.due}"></p:inputText>
+                    <h:outputLabel value="Address "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.address}"></p:inputText>
+                    <h:outputLabel value="Contact "></h:outputLabel>
+                    <p:inputText value="#{studentMB.st.contact}"></p:inputText>
+
+
+
+                    <p:commandButton action="#{studentMB.addStudent()}" value="Submit" update="msg"></p:commandButton>
+                    <h:outputLink value="displaystudent.xhtml">View All Student Records</h:outputLink>
+                </p:panelGrid>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

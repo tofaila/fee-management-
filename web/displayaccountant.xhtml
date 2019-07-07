@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+    <h:head>
+        <title>View Accountant Records</title>
+
+    </h:head>
+    <h:body> 
+         
+        <h:form id="form"> 
+
+            <p:dataGrid var="users" value="#{registerMB.allUsers}" >
+                <f:facet name="header">
+                    All Accountant Records
+                </f:facet>
+
+
+
+            </p:dataGrid>
+            <p:menubar>
+                <f:facet name="options">
+                    <p:inputText style="margin:1px 10px 1px 1px;"/>
+                    <p:commandButton  actionListener="#{registerMB.searchAccbyId(users)}" value="Search" type="button" onclick="PF('dlg3').show();" icon="pi pi-home" /> 
+                </f:facet>
+            </p:menubar>
+
+
+            <p:dataTable var="users" value="#{registerMB.allUsers}" id="users">
+                <p:column headerText="Id">
+                    <h:outputText value="#{users.id}" />
+                </p:column>
+
+                <p:column headerText="User name">
+                    <h:outputText value="#{users.username}" />
+                </p:column>
+
+                <p:column headerText="Full Name">
+                    <h:outputText value="#{users.fullname}" />
+                </p:column>
+
+                <p:column headerText="Email">
+                    <h:outputText value="#{users.email}" />
+                </p:column>
+                <p:column headerText="Password">
+                    <h:outputText value="#{users.password}" />
+                </p:column>
+                <p:column headerText="Register Date">
+                    <h:outputText value="#{users.regdate}" />
+                </p:column>
+
+                <p:column headerText="Update">
+                    
+                 <p:commandButton icon="ui-icon-pencil" action="#{registerMB.searchUserbyId(users)}" style="border-color:#FF0000" />
+                  
+
+
+                </p:column>
+              
+                <p:column headerText="Delete">
+
+                    <p:commandButton icon="ui-icon-circle-close" actionListener="#{registerMB.doDelete(users)}"  style="border-color:#FF0000" update=":form:users">
+
+                    </p:commandButton>
+
+                </p:column>
+
+
+
+            </p:dataTable>
+
+
+        </h:form>  
+        <center><h2> <h:outputLink  value="addaccountant.xhtml">Create New Accountant</h:outputLink></h2></center>
+    </h:body>  
+</html>
+

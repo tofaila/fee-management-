@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Registration Info Form</title>
+    </h:head>
+    <h:body>
+        <center>
+        <h:form>
+            <p:messages id="msg" closable="true" showDetail="true"></p:messages>
+            <p:panelGrid columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Registration Form Here"/>
+                </f:facet>
+                <h:outputLabel value="User Name "></h:outputLabel>
+                <p:inputText value="#{registerMB.users.username}" requiredMessage="Please enter Username" required="true"></p:inputText>
+                <h:outputLabel value="Full Name "></h:outputLabel>
+                <p:inputText value="#{registerMB.users.fullname}" requiredMessage="Please enter Fullname" required="true" ></p:inputText>
+                <h:outputLabel value="Email "></h:outputLabel>
+                <p:inputText value="#{registerMB.users.email}" requiredMessage="Please enter Your Email" required="true"></p:inputText>
+                
+                <h:outputLabel value="Password"></h:outputLabel>
+                <h:inputSecret value="#{registerMB.users.password}" requiredMessage="Please enter your Password" required="true"></h:inputSecret>
+               <p:outputLabel for="popup" value="Popup:" />
+               <p:calendar id="popup" value="#{registerMB.users.regdate}" />
+                <p:commandButton action="#{registerMB.register()}" value="Submit" update="msg"></p:commandButton>
+            </p:panelGrid>
+        </h:form>
+        </center>
+    </h:body>
+</html>
+

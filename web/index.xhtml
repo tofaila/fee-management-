@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+     <ui:composition template="/templates/page-template.xhtml">
+    <h:head>
+        <title>Login Info Form</title>
+    </h:head>
+    <h:body>
+        <center>
+        <h:form>
+            <p:messages id="msg" closable="true" showDetail="true"></p:messages>
+            <p:panelGrid columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Login Form Here"/>
+                </f:facet>
+                <h:outputLabel value="Enter Your Name "></h:outputLabel>
+                <p:inputText value="#{loginMB.users.username}"></p:inputText>
+                <h:outputLabel value=" Enter Password"></h:outputLabel>
+                <h:inputSecret value="#{loginMB.users.password}"></h:inputSecret>
+                <p:commandButton action="#{loginMB.login()}" value="Submit" update="msg"></p:commandButton>
+                <h:outputLink value="index.xhtml">Logout</h:outputLink>
+                <h:outputLink value="registration.xhtml">Register</h:outputLink>
+                <h:outputLink value="displayaccountant.xhtml">View All Accountant Records</h:outputLink>
+            </p:panelGrid>
+        </h:form>
+        </center>
+    </h:body>
+     </ui:composition>
+</html>
+

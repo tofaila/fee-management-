@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 1, 2019 6:40:55 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entity.Student" table="student" catalog="user" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="rollno" type="int">
+            <column name="rollno" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="45" not-null="true" />
+        </property>
+        <property name="course" type="string">
+            <column name="course" length="45" not-null="true" />
+        </property>
+        <property name="fee" type="double">
+            <column name="fee" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="paid" type="double">
+            <column name="paid" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="due" type="double">
+            <column name="due" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" not-null="true" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
